@@ -22,9 +22,20 @@ class MyHomePage extends StatelessWidget {
         title: Text('Flutter App'),
       ),
       body: Column(
+        /*
+        Positioning
+        // mainAxisAlignment goes top to bottom in column
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment goes left to right in row
+        crossAxisAlignment: CrossAxisAlignment.center,
+        */
         children: <Widget>[
-          Card(
-            child: Text('CHART!'),
+          Container(
+            width: double.infinity,
+            child: Card(
+              child: Text('CHART!'),
+              elevation: 5,
+            ),
           ),
           Card(
             child: Text('LIST OF TRANSCATION!'),
