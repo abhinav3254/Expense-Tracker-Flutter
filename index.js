@@ -1,6 +1,6 @@
 const express = require('express');
 const { port } = require('./config/_config');
-const os = require('os');
+const { getLocalIP } = require('./config/local_ip');
 
 const app = express();
 
@@ -12,17 +12,6 @@ app.get('', (req, res) => {
 });
 
 
-function getLocalIP() {
-    const networkInterfaces = os.networkInterfaces();
-    for (const interfaceName in networkInterfaces) {
-        for (const iface of networkInterfaces[interfaceName]) {
-            if (iface.family === 'IPv4' && !iface.internal) {
-                return iface.address;
-            }
-        }
-    }
-    return 'localhost';
-}
 
 app.listen(port, (req, res) => {
     const localIP = getLocalIP();
