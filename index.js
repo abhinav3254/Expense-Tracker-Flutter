@@ -1,7 +1,10 @@
 const express = require('express');
 const { port } = require('./config/_config');
 const { getLocalIP } = require('./config/local_ip');
+const { connect } = require('./config/db_config');
 const auth = require('./routes/auth_routes');
+
+connect();
 
 const app = express();
 

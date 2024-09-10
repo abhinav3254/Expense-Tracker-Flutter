@@ -7,4 +7,8 @@ router.post('/login', (req, res) => {
     return res.json({ message: 'working' });
 });
 
+router.post('/register', (req, res) => {
+    return res.status(200).json({ message: 'working' });
+});
+
 module.exports = router;
