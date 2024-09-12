@@ -1,12 +1,19 @@
 const express = require('express');
+const cors = require('cors');
 const { port } = require('./config/_config');
 const { getLocalIP } = require('./config/local_ip');
 const { connect } = require('./config/db_config');
-const auth = require('./routes/auth_routes');
+const authRoute = require('./routes/auth_routes');
+const expenseRoute = require('./routes/expense_management');
 
+// importing middleware
+const authenticateToken = require('./middleware/verify_token');
+
+// connecting to db..
 connect();
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
@@ -16,7 +23,8 @@ app.get('', (req, res) => {
 });
 
 
-app.use('/auth', auth);
+app.use('/auth', authRoute);
+app.use('/expense', authenticateToken, expenseRoute);
 
 
 app.listen(port, (req, res) => {

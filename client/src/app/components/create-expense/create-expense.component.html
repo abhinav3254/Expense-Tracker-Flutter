@@ -1,0 +1,20 @@
+<div class="p-10 relative">
+    <img class="h-5 w-5 absolute right-5 top-3 hover:cursor-pointer" src="assets/cross.svg" alt="cross"
+        (click)="closeDialog()">
+    <form class="flex flex-col" [formGroup]="createExpenseForm" (ngSubmit)="submit()">
+        <input class="p-2 border border-gray-200 m-2" type="text" placeholder="Title of expense"
+            formControlName="title">
+        <div class="flex items-center justify-start">
+            <input class="p-2 border border-gray-200 w-full m-2" type="number" placeholder="Amount"
+                formControlName="amount">
+            <select class="p-2 border border-gray-200 w-full m-2" formControlName="category">
+                <option>Select Category</option>
+                <option value={{item}} *ngFor="let item of expenseCategories">{{item}}</option>
+            </select>
+            <input class="p-2 border border-gray-200 w-full m-2" type="date" placeholder="Date" formControlName="date">
+        </div>
+        <div class="flex items-center justify-center">
+            <button type="submit" class="bg-primary text-white px-4 py-2 rounded-md">submit</button>
+        </div>
+    </form>
+</div>

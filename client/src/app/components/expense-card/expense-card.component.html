@@ -1,0 +1,19 @@
+<ng-container *ngIf="expense">
+    <div class="w-[400px] m-2 p-5 shadow-lg rounded-md">
+        <p class="text-4xl text-primary">{{expense.title}}</p>
+        <div class="h-[1px] bg-gray-200 my-2"></div>
+        <div class="flex items-center justify-between">
+            <p class="italic text-gray-500">{{expense.category}}</p>
+            <p class="text-sm">{{expense.amount |currency:'INR'}}</p>
+        </div>
+        <div class="flex items-center justify-end text-sm">
+            <img class="h-3 w-3 mr-1" src="assets/calendar.svg" alt="">
+            <p>{{expense.date | date}}</p>
+        </div>
+        <div class="h-[1px] bg-gray-200 my-2"></div>
+        <div class="flex items-center justify-evenly mt-5">
+            <button class="bg-green-800 text-white px-4 py-1 rounded-md">Update</button>
+            <button class="bg-red-500 text-white px-4 py-1 rounded-md">Delete</button>
+        </div>
+    </div>
+</ng-container>

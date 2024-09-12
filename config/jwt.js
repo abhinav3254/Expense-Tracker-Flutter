@@ -21,7 +21,6 @@ function verifyAccessToken(token) {
         const decode = jwt.verify(token, jwt_secret);
         return { status: true, data: decode };
     } catch (err) {
-        console.log('error in decoding jwt');
         return { status: false, error: err.message };
     }
 }

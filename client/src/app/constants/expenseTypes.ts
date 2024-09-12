@@ -1,0 +1,22 @@
+export const expensesType = [
+    'Food',
+    'Travel',
+    'Leisure',
+    'Work',
+    'Shopping',
+    'Utilities',
+    'Entertainment',
+    'Healthcare',
+    'Education',
+    'Transport',
+    'Insurance',
+    'Rent',
+    'Groceries',
+    'Dining Out',
+    'Subscriptions',
+    'Gifts',
+    'Maintenance',
+    'Fitness',
+    'Personal Care',
+    'Charity'
+];

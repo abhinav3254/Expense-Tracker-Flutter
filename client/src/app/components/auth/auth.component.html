@@ -1,0 +1,32 @@
+<div class="h-screen w-screen flex items-center justify-center">
+    <ng-container *ngIf="registerPage;else requireLogin">
+        <form [formGroup]="register" class="flex flex-col items-center w-1/2 p-5 shadow-2xl rounded-md">
+            <p class="text-2xl">Register</p>
+            <input class="border border-gray-200 rounded-md p-2 m-1 w-full" type="text" placeholder="Name"
+                formControlName="name">
+            <input class="border border-gray-200 rounded-md p-2 m-1 w-full" type="text" placeholder="Email"
+                formControlName="email">
+            <input class="border border-gray-200 rounded-md p-2 m-1 w-full" type="text" placeholder="Password"
+                formControlName="password">
+            <button class="bg-primary text-white px-4 py-2 rounded-md shadow-md">Register</button>
+            <div class="flex items-center my-5">
+                <p>Already have an account? <span class="text-primary hover:cursor-pointer"
+                        (click)="registerPage=false">Login</span></p>
+            </div>
+        </form>
+    </ng-container>
+    <ng-template #requireLogin>
+        <form [formGroup]="login" class="flex flex-col items-center w-1/2 p-5 shadow-2xl rounded-md">
+            <p class="text-2xl">Login</p>
+            <input class="border border-gray-200 rounded-md p-2 m-1 w-full" type="text" placeholder="Email"
+                formControlName="email">
+            <input class="border border-gray-200 rounded-md p-2 m-1 w-full" type="text" placeholder="Password"
+                formControlName="password">
+            <button class="bg-primary text-white px-4 py-2 rounded-md shadow-md">Login</button>
+            <div class="flex items-center my-5">
+                <p>Don't have an account? <span class="text-primary  hover:cursor-pointer"
+                        (click)="registerPage=true">Register</span></p>
+            </div>
+        </form>
+    </ng-template>
+</div>
