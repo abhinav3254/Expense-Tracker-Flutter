@@ -29,12 +29,9 @@
             <p class="text-2xl">Login</p>
             <input class="border border-gray-200 rounded-md p-2 m-1 w-full" type="text" placeholder="Email"
                 formControlName="email">
-            <ng-container
-                *ngIf="login.controls.['email'].invalid && (login.controls.['email'].dirty || login.controls.['email'].touched)">
-                <div class="flex items-center justify-start w-full text-red-500">
-                    <p>Email is required</p>
-                </div>
-            </ng-container>
+            <div class="flex items-center justify-start w-full text-red-500">
+                <p>Email is required</p>
+            </div>
             <input class="border border-gray-200 rounded-md p-2 m-1 w-full" type="text" placeholder="Password"
                 formControlName="password">
             <div class="flex items-center justify-start w-full text-red-500">
